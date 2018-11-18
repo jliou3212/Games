@@ -12,13 +12,12 @@ screen.fill(black)
 
 rain = pygame.Surface((3, 10))
 rain.fill(blue)
-rain_pos = pygame.Rect((random.randrange(1, 800), 0), (1, 5))
+rain_pos = pygame.Rect((random.randrange(1, 800), 0), (3, 10))
 rain_list = [rain_pos]
 rain_list_vis = [rain]
 
 speed = 3
 count = 0
-
 while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
