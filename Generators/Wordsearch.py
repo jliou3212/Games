@@ -25,6 +25,8 @@ def insert_word(b1, w1):
     startx = random.randrange(0, len(b1))
     starty = random.randrange(0, len(b1))
     b1[startx][starty] = w1[0]
+    paramx = [0, 0]
+    paramy = [0, 0]
 
 # TODO determine list of illegal movements through conditionals
     while True:
