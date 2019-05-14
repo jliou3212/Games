@@ -22,19 +22,19 @@ def random_words(amt):
 # inserts one word into the board
 def insert_word(b1, w1):
     # selects starting position for word
-    startx = random.randrange(0, len(b1))
-    starty = random.randrange(0, len(b1))
-    b1[startx][starty] = w1[0]
     paramx = [0, 0]
     paramy = [0, 0]
 
 # TODO determine list of illegal movements through conditionals
     while True:
-        if not len(w1) + startx > len(b1):
-            if not startx - len(w1) < 0:
-        if not len(w1) + starty > len(b1):
-            if not starty - len(w1) < 0:
+        startx = random.randrange(0, len(b1))
+        starty = random.randrange(0, len(b1))
+        # check if startx value will be out of bounds
+        if startx + len(w1) < len(b1) or startx - len(w1) > 0 or starty + len(w1) < len(b1) or starty - len(w1) > 0:
+            break
 
+    b1[startx][starty] = w1[0]
+    print(startx, starty)
     randx = random.randrange(-1, 2)
     randy = random.randrange(-1, 2)
     return b1
